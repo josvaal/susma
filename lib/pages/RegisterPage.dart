@@ -1,18 +1,17 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:susma/components/login/FormInput.dart';
 import 'package:susma/components/login/SufixPassword.dart';
 
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   final VoidCallback togglePage;
-  const LoginPage({super.key, required this.togglePage});
+  const RegisterPage({super.key, required this.togglePage});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   final formKey = GlobalKey<ShadFormState>();
   bool obscure = true;
 
@@ -29,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Iniciar Sesión',
+                  'Registrarme',
                   style: ShadTheme.of(context).textTheme.h1,
                 ),
                 const SizedBox(height: 30),
@@ -89,8 +88,8 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 ShadButton.link(
+                  child: const Text('¿Ya tienes una cuenta? Iniciar Sesión'),
                   onPressed: widget.togglePage,
-                  child: const Text('¿Aún no tienes cuenta? Regístrate'),
                 ),
               ],
             ),

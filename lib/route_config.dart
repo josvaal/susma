@@ -5,8 +5,10 @@ import 'package:susma/route_config.gr.dart';
 class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
-        /// routes go here
-        RedirectRoute(path: '/', redirectTo: '/auth'),
+        AutoRoute(
+          path: "/",
+          page: StartRoute.page,
+        ),
         AutoRoute(
           path: "/home",
           page: HomeRoute.page,
