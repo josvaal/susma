@@ -31,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
                   'Iniciar Sesión',
                   style: ShadTheme.of(context).textTheme.h1,
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 30),
                 FormInput(
                   id: "email",
                   obscureText: false,
@@ -76,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   width: double.infinity,
                   child: ShadButton(
-                    child: const Text('Submit'),
+                    child: const Text('Iniciar Sesión'),
                     onPressed: () {
                       if (formKey.currentState!.saveAndValidate()) {
                         print(
