@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "272134060432",
+    "project_id": "susma-47e3b",
+    "storage_bucket": "susma-47e3b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272134060432:android:58e2be6e2ee17cd3325b15",
+        "android_client_info": {
+          "package_name": "com.josval.susma"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDEifzrPX2d-tAT1urM8wrx0RVlDAi3Yo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
