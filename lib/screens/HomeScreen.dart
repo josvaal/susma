@@ -1,6 +1,3 @@
-import 'package:animations/animations.dart';
-import 'package:auto_route/annotations.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
@@ -14,21 +11,33 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'Home Page!',
-            style: ShadTheme.of(context).textTheme.h2,
-          ),
-          ShadButton(
-            child: const Text('Cerrar Sesión'),
-            onPressed: () async {
-              await FirebaseAuth.instance.signOut();
-            },
-          ),
-        ],
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Siguientes',
+                  style: ShadTheme.of(context).textTheme.large,
+                ),
+                ShadButton.outline(
+                  decoration: ShadDecoration(
+                    border: ShadBorder(
+                      radius: BorderRadius.circular(30),
+                    ),
+                  ),
+                  child: const Text('Ver todo'),
+                  onPressed: () {},
+                ),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

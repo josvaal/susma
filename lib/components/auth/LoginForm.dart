@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:susma/components/auth/FormInput.dart';
 import 'package:susma/components/auth/SufixPassword.dart';
-import 'package:susma/methods/AuthMethods.dart';
+import 'package:susma/methods/auth/AuthMethods.dart';
 
 class LoginForm extends StatefulWidget {
   final GlobalKey<ShadFormState> formKey;
