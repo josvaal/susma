@@ -91,8 +91,6 @@ class _LoginFormState extends State<LoginForm> {
                       ),
                     );
                     widget.togglePage();
-
-                    context.router.replaceNamed('/home');
                   }).catchError((e) {
                     ShadToaster.of(context).show(
                       ShadToast.destructive(

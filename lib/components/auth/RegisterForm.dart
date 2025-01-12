@@ -122,8 +122,6 @@ class _RegisterFormState extends State<RegisterForm> {
                           ),
                         );
                         widget.togglePage();
-
-                        context.router.replaceNamed('/home');
                       },
                     ).catchError((e) {
                       ShadToaster.of(context).show(

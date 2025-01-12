@@ -28,7 +28,6 @@ class _HomeScreenState extends State<HomeScreen> {
               child: const Text('Cerrar Sesión'),
               onPressed: () async {
                 await FirebaseAuth.instance.signOut();
-                context.router.replaceNamed('/auth');
               },
             )
           ],

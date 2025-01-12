@@ -1,10 +1,8 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:susma/pages/LoginPage.dart';
 import 'package:susma/pages/RegisterPage.dart';
 import 'package:animations/animations.dart';
 
-@RoutePage()
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
 
