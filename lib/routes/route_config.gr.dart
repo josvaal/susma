@@ -16,7 +16,7 @@ import 'package:susma/main/nav/screens/NavigationScreen.dart' as _i1;
 /// [_i1.NavigationScreen]
 class NavigationRoute extends _i2.PageRouteInfo<void> {
   const NavigationRoute({List<_i2.PageRouteInfo>? children})
-      : super(NavigationRoute.name, initialChildren: children);
+    : super(NavigationRoute.name, initialChildren: children);
 
   static const String name = 'NavigationRoute';
 
