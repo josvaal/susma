@@ -10,20 +10,20 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i2;
-import 'package:susma/screens/HomeScreen.dart' as _i1;
+import 'package:susma/screens/nav/NavigationScreen.dart' as _i1;
 
 /// generated route for
-/// [_i1.HomeScreen]
-class HomeRoute extends _i2.PageRouteInfo<void> {
-  const HomeRoute({List<_i2.PageRouteInfo>? children})
-    : super(HomeRoute.name, initialChildren: children);
+/// [_i1.NavigationScreen]
+class NavigationRoute extends _i2.PageRouteInfo<void> {
+  const NavigationRoute({List<_i2.PageRouteInfo>? children})
+    : super(NavigationRoute.name, initialChildren: children);
 
-  static const String name = 'HomeRoute';
+  static const String name = 'NavigationRoute';
 
   static _i2.PageInfo page = _i2.PageInfo(
     name,
     builder: (data) {
-      return const _i1.HomeScreen();
+      return const _i1.NavigationScreen();
     },
   );
 }

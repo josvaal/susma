@@ -5,13 +5,9 @@ import 'package:susma/route_config.gr.dart';
 class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
-        RedirectRoute(
-          path: "/",
-          redirectTo: "/home",
-        ),
         AutoRoute(
-          path: "/home",
-          page: HomeRoute.page,
+          path: "/",
+          page: NavigationRoute.page,
         ),
       ];
 }

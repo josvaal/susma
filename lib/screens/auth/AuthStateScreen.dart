@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:susma/route_config.dart';
 import 'package:susma/screens/auth/AuthScreen.dart';
-import 'package:susma/screens/StartScreen.dart';
+import 'package:susma/screens/init/StartScreen.dart';
 
 class AuthStateScreen extends StatefulWidget {
   final AppRouter appRouter;
