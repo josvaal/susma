@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
-import 'package:susma/route_config.dart';
-import 'package:susma/screens/auth/AuthScreen.dart';
-import 'package:susma/screens/init/StartScreen.dart';
+import 'package:susma/routes/route_config.dart';
+import 'package:susma/main/auth/screens/AuthScreen.dart';
+import 'package:susma/main/start/screens/StartScreen.dart';
 
 class AuthStateScreen extends StatefulWidget {
   final AppRouter appRouter;

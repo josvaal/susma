@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
-import 'package:susma/components/nav/NavActionButton.dart';
+import 'package:susma/main/nav/components/NavActionButton.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String leadingType;

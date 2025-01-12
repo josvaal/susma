@@ -1,9 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
-import 'package:susma/route_config.dart';
-import 'package:susma/screens/auth/AuthStateScreen.dart';
-import 'firebase_options.dart';
+import 'package:susma/routes/route_config.dart';
+import 'package:susma/main/auth/screens/AuthStateScreen.dart';
+import 'database/firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

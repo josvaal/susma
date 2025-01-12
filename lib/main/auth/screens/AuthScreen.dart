@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:susma/pages/auth/LoginPage.dart';
-import 'package:susma/pages/auth/RegisterPage.dart';
+import 'package:susma/main/auth/pages/LoginPage.dart';
+import 'package:susma/main/auth/pages/RegisterPage.dart';
 import 'package:animations/animations.dart';
 
 class AuthScreen extends StatefulWidget {

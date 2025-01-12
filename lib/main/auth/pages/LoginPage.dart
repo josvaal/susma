@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
-import 'package:susma/components/auth/LoginForm.dart';
+import 'package:susma/main/auth/components/LoginForm.dart';
 
 class LoginPage extends StatefulWidget {
   final VoidCallback togglePage;

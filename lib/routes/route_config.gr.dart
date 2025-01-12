@@ -10,13 +10,13 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i2;
-import 'package:susma/screens/nav/NavigationScreen.dart' as _i1;
+import 'package:susma/main/nav/screens/NavigationScreen.dart' as _i1;
 
 /// generated route for
 /// [_i1.NavigationScreen]
 class NavigationRoute extends _i2.PageRouteInfo<void> {
   const NavigationRoute({List<_i2.PageRouteInfo>? children})
-    : super(NavigationRoute.name, initialChildren: children);
+      : super(NavigationRoute.name, initialChildren: children);
 
   static const String name = 'NavigationRoute';
 

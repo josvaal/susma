@@ -1,10 +1,10 @@
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:susma/components/nav/FloatingBottomBar.dart';
-import 'package:susma/pages/nav/NavigationPage.dart';
-import 'package:susma/components/nav/CustomAppBar.dart';
-import 'package:susma/utils/nav/NavScreens.dart';
+import 'package:susma/main/nav/components/FloatingBottomBar.dart';
+import 'package:susma/main/nav/pages/NavigationPage.dart';
+import 'package:susma/main/nav/components/CustomAppBar.dart';
+import 'package:susma/main/nav/utils/NavScreens.dart';
 
 @RoutePage()
 class NavigationScreen extends StatefulWidget {
