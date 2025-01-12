@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:susma/components/auth/FormInput.dart';
@@ -113,15 +114,18 @@ class _RegisterFormState extends State<RegisterForm> {
                 onPressed: () {
                   setState(() => buttonEnabled = false);
                   if (widget.formKey.currentState!.saveAndValidate()) {
-                    authRegister(widget.formKey.currentState!.value)
-                        .then((userCredential) {
-                      ShadToaster.of(context).show(
-                        const ShadToast(
-                          description: Text('¡Usuario registrado con éxito!'),
-                        ),
-                      );
-                      widget.togglePage();
-                    }).catchError((e) {
+                    authRegister(widget.formKey.currentState!.value).then(
+                      (userCredential) {
+                        ShadToaster.of(context).show(
+                          const ShadToast(
+                            description: Text('¡Usuario registrado con éxito!'),
+                          ),
+                        );
+                        widget.togglePage();
+
+                        context.router.replaceNamed('/home');
+                      },
+                    ).catchError((e) {
                       ShadToaster.of(context).show(
                         ShadToast.destructive(
                           alignment: Alignment.topCenter,
@@ -133,7 +137,6 @@ class _RegisterFormState extends State<RegisterForm> {
                     }).whenComplete(() {
                       setState(() => buttonEnabled = true);
                     });
-                    ;
                   } else {
                     ShadToaster.of(context).show(
                       const ShadToast.destructive(

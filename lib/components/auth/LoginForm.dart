@@ -1,7 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:susma/components/auth/FormInput.dart';
 import 'package:susma/components/auth/SufixPassword.dart';
+import 'package:susma/methods/AuthMethods.dart';
 
 class LoginForm extends StatefulWidget {
   final GlobalKey<ShadFormState> formKey;
@@ -14,6 +16,7 @@ class LoginForm extends StatefulWidget {
 
 class _LoginFormState extends State<LoginForm> {
   bool obscure = true;
+  bool buttonEnabled = true;
 
   @override
   Widget build(BuildContext context) {
@@ -72,13 +75,44 @@ class _LoginFormState extends State<LoginForm> {
           SizedBox(
             width: double.infinity,
             child: ShadButton(
+              enabled: buttonEnabled,
+              icon: !buttonEnabled
+                  ? const CircularProgressIndicator(strokeWidth: 2)
+                  : null,
               child: const Text('Iniciar Sesión'),
               onPressed: () {
+                setState(() => buttonEnabled = false);
                 if (widget.formKey.currentState!.saveAndValidate()) {
-                  print(
-                      'validation succeeded with ${widget.formKey.currentState!.value}');
+                  authLogin(widget.formKey.currentState!.value)
+                      .then((userCredential) {
+                    ShadToaster.of(context).show(
+                      const ShadToast(
+                        description: Text('¡Inicio de sesión exitoso!'),
+                      ),
+                    );
+                    widget.togglePage();
+
+                    context.router.replaceNamed('/home');
+                  }).catchError((e) {
+                    ShadToaster.of(context).show(
+                      ShadToast.destructive(
+                        alignment: Alignment.topCenter,
+                        description: Text(
+                          'Error al iniciar sesión: $e',
+                        ),
+                      ),
+                    );
+                  }).whenComplete(() {
+                    setState(() => buttonEnabled = true);
+                  });
                 } else {
-                  print('validation failed');
+                  ShadToaster.of(context).show(
+                    const ShadToast.destructive(
+                      alignment: Alignment.topCenter,
+                      description: Text('Error al validar.'),
+                    ),
+                  );
+                  setState(() => buttonEnabled = true);
                 }
               },
             ),

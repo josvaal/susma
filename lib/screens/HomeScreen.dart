@@ -1,5 +1,6 @@
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
@@ -23,6 +24,13 @@ class _HomeScreenState extends State<HomeScreen> {
               'Home Page!',
               style: ShadTheme.of(context).textTheme.h2,
             ),
+            ShadButton(
+              child: const Text('Cerrar Sesión'),
+              onPressed: () async {
+                await FirebaseAuth.instance.signOut();
+                context.router.replaceNamed('/auth');
+              },
+            )
           ],
         ),
       ),
