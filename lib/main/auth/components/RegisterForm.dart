@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:susma/main/auth/components/FormInput.dart';
 import 'package:susma/main/auth/components/SufixPassword.dart';
-import 'package:susma/main/auth/methods/AuthMethods.dart';
-import 'package:susma/main/auth/methods/AuthValidators.dart';
+import 'package:susma/main/auth/methods/auth_methods.dart';
+import 'package:susma/main/auth/methods/auth_validators.dart';
 
 class RegisterForm extends StatefulWidget {
   final GlobalKey<ShadFormState> formKey;
