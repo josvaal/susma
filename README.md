@@ -1,3 +1,5 @@
-# susma
+# Susma
 
-A new Flutter project.
+# Arquitectura
+
+![](/doc/architecture.png)
