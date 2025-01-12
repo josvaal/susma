@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:susma/route_config.dart';
-import 'package:susma/screens/AuthStateScreen.dart';
+import 'package:susma/screens/auth/AuthStateScreen.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
@@ -21,6 +21,10 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ShadApp(
+      darkTheme: ShadThemeData(
+        brightness: Brightness.dark,
+        colorScheme: const ShadNeutralColorScheme.dark(),
+      ),
       debugShowCheckedModeBanner: false,
       home: AuthStateScreen(appRouter: _appRouter),
     );

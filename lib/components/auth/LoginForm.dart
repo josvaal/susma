@@ -86,6 +86,7 @@ class _LoginFormState extends State<LoginForm> {
                       .then((userCredential) {
                     ShadToaster.of(context).show(
                       const ShadToast(
+                        alignment: Alignment.topCenter,
                         description: Text('¡Inicio de sesión exitoso!'),
                       ),
                     );

@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:susma/route_config.dart';
-import 'package:susma/screens/AuthScreen.dart';
+import 'package:susma/screens/auth/AuthScreen.dart';
 import 'package:susma/screens/StartScreen.dart';
 
 class AuthStateScreen extends StatefulWidget {
@@ -24,6 +24,10 @@ class _AuthStateScreenState extends State<AuthStateScreen> {
             return StartScreen();
           } else if (snapshot.hasData && snapshot.data != null) {
             return ShadApp.router(
+              darkTheme: ShadThemeData(
+                brightness: Brightness.dark,
+                colorScheme: const ShadNeutralColorScheme.dark(),
+              ),
               debugShowCheckedModeBanner: false,
               routerConfig: widget.appRouter.config(),
             );
