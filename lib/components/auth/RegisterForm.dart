@@ -3,6 +3,7 @@ import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:susma/components/auth/FormInput.dart';
 import 'package:susma/components/auth/SufixPassword.dart';
 import 'package:susma/methods/AuthMethods.dart';
+import 'package:susma/methods/AuthValidators.dart';
 
 class RegisterForm extends StatefulWidget {
   final GlobalKey<ShadFormState> formKey;
@@ -16,6 +17,7 @@ class RegisterForm extends StatefulWidget {
 
 class _RegisterFormState extends State<RegisterForm> {
   bool obscure = true;
+  bool buttonEnabled = true;
 
   @override
   Widget build(BuildContext context) {
@@ -38,17 +40,7 @@ class _RegisterFormState extends State<RegisterForm> {
               keyboardType: TextInputType.emailAddress,
               label: 'Correo Electrónico',
               placeholder: "usuario@mail.com",
-              validator: (v) {
-                final emailRegex = RegExp(
-                  r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
-                );
-                if (v.isEmpty) {
-                  return 'El campo no puede estar vacío.';
-                } else if (!emailRegex.hasMatch(v)) {
-                  return 'Ingrese un correo electrónico válido.';
-                }
-                return null; // Válido
-              },
+              validator: emailValidator,
               icon: LucideIcons.mail,
             ),
             const SizedBox(height: 16),
@@ -58,17 +50,7 @@ class _RegisterFormState extends State<RegisterForm> {
               keyboardType: TextInputType.visiblePassword,
               label: 'Contraseña',
               placeholder: "",
-              validator: (v) {
-                final pwdRegex = RegExp(r'^(?=.*[A-Za-z])(?=.*\d).{5,}$');
-                if (v.isEmpty) {
-                  return 'El campo no puede estar vacío.';
-                }
-
-                if (!pwdRegex.hasMatch(v)) {
-                  return 'Debe tener al menos 1 letra, 1 número y 5 caracteres.';
-                }
-                return null;
-              },
+              validator: passwordValidator,
               icon: LucideIcons.lock,
               sufix: SufixPassword(
                 obscure: obscure,
@@ -84,15 +66,10 @@ class _RegisterFormState extends State<RegisterForm> {
               keyboardType: TextInputType.visiblePassword,
               label: 'Repetir Contraseña',
               placeholder: "",
-              validator: (v) {
-                if (v != widget.formKey.currentState!.value["password"]) {
-                  return "Las contraseñas deben coincidir";
-                }
-                if (v.isEmpty) {
-                  return 'El campo no puede estar vacío.';
-                }
-                return null;
-              },
+              validator: (v) => repeatPasswordValidator(
+                v,
+                widget.formKey.currentState?.value["password"] ?? "",
+              ),
               icon: LucideIcons.lock,
             ),
             const SizedBox(height: 16),
@@ -102,15 +79,7 @@ class _RegisterFormState extends State<RegisterForm> {
               keyboardType: TextInputType.name,
               label: 'Nombres',
               placeholder: "Juan",
-              validator: (v) {
-                if (v.isEmpty) {
-                  return 'El campo no puede estar vacío.';
-                }
-                if (v.length < 2) {
-                  return 'El nombre tiene que ser mas largo que 2 carácteres';
-                }
-                return null; // Válido
-              },
+              validator: nameValidator,
               icon: LucideIcons.caseSensitive,
             ),
             const SizedBox(height: 16),
@@ -120,15 +89,7 @@ class _RegisterFormState extends State<RegisterForm> {
               keyboardType: TextInputType.name,
               label: 'Apellidos',
               placeholder: "Pérez",
-              validator: (v) {
-                if (v.isEmpty) {
-                  return 'El campo no puede estar vacío.';
-                }
-                if (v.length < 2) {
-                  return 'El nombre tiene que ser mas largo que 2 carácteres';
-                }
-                return null; // Válido
-              },
+              validator: lastnameValidator,
               icon: LucideIcons.caseSensitive,
             ),
             const SizedBox(height: 16),
@@ -138,23 +99,19 @@ class _RegisterFormState extends State<RegisterForm> {
               keyboardType: TextInputType.text,
               label: 'Nombre de usuario',
               placeholder: "Usuario123",
-              validator: (v) {
-                if (v.isEmpty) {
-                  return 'El campo no puede estar vacío.';
-                }
-                if (v.length < 5) {
-                  return 'El nombre tiene que ser mas largo que 5 carácteres';
-                }
-                return null; // Válido
-              },
+              validator: usernameValidator,
               icon: LucideIcons.user,
             ),
             const SizedBox(height: 16),
             SizedBox(
               width: double.infinity,
               child: ShadButton(
-                child: const Text('Registrar Cuenta'),
+                enabled: buttonEnabled,
+                icon: !buttonEnabled
+                    ? const CircularProgressIndicator(strokeWidth: 2)
+                    : null,
                 onPressed: () {
+                  setState(() => buttonEnabled = false);
                   if (widget.formKey.currentState!.saveAndValidate()) {
                     authRegister(widget.formKey.currentState!.value)
                         .then((userCredential) {
@@ -167,20 +124,27 @@ class _RegisterFormState extends State<RegisterForm> {
                     }).catchError((e) {
                       ShadToaster.of(context).show(
                         ShadToast.destructive(
+                          alignment: Alignment.topCenter,
                           description: Text(
                             'Error al registrar el usuario: $e',
                           ),
                         ),
                       );
+                    }).whenComplete(() {
+                      setState(() => buttonEnabled = true);
                     });
+                    ;
                   } else {
                     ShadToaster.of(context).show(
                       const ShadToast.destructive(
+                        alignment: Alignment.topCenter,
                         description: Text('Error al validar.'),
                       ),
                     );
+                    setState(() => buttonEnabled = true);
                   }
                 },
+                child: const Text('Registrar Cuenta'),
               ),
             ),
             ShadButton.link(
