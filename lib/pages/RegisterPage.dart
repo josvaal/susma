@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
-import 'package:susma/components/auth/FormInput.dart';
 import 'package:susma/components/auth/RegisterForm.dart';
-import 'package:susma/components/auth/SufixPassword.dart';
 
 class RegisterPage extends StatefulWidget {
   final VoidCallback togglePage;

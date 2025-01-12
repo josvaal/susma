@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:susma/components/auth/FormInput.dart';
 import 'package:susma/components/auth/SufixPassword.dart';
+import 'package:susma/methods/AuthMethods.dart';
 
 class RegisterForm extends StatefulWidget {
   final GlobalKey<ShadFormState> formKey;
@@ -98,7 +99,7 @@ class _RegisterFormState extends State<RegisterForm> {
             FormInput(
               id: "name",
               obscureText: false,
-              keyboardType: TextInputType.text,
+              keyboardType: TextInputType.name,
               label: 'Nombres',
               placeholder: "Juan",
               validator: (v) {
@@ -116,7 +117,7 @@ class _RegisterFormState extends State<RegisterForm> {
             FormInput(
               id: "lastname",
               obscureText: false,
-              keyboardType: TextInputType.text,
+              keyboardType: TextInputType.name,
               label: 'Apellidos',
               placeholder: "Pérez",
               validator: (v) {
@@ -155,10 +156,29 @@ class _RegisterFormState extends State<RegisterForm> {
                 child: const Text('Registrar Cuenta'),
                 onPressed: () {
                   if (widget.formKey.currentState!.saveAndValidate()) {
-                    print(
-                        'validation succeeded with ${widget.formKey.currentState!.value}');
+                    authRegister(widget.formKey.currentState!.value)
+                        .then((userCredential) {
+                      ShadToaster.of(context).show(
+                        const ShadToast(
+                          description: Text('¡Usuario registrado con éxito!'),
+                        ),
+                      );
+                      widget.togglePage();
+                    }).catchError((e) {
+                      ShadToaster.of(context).show(
+                        ShadToast.destructive(
+                          description: Text(
+                            'Error al registrar el usuario: $e',
+                          ),
+                        ),
+                      );
+                    });
                   } else {
-                    print('validation failed');
+                    ShadToaster.of(context).show(
+                      const ShadToast.destructive(
+                        description: Text('Error al validar.'),
+                      ),
+                    );
                   }
                 },
               ),
