@@ -15,7 +15,7 @@ final List<Map<String, dynamic>> appBarData = [
     "title": "José Valentino",
     "leadingType": 'avatar',
     "avatarUrl":
-        "https://app.requestly.io/delay/2000/avatars.githubusercontent.com/u/124599?v=4",
+        "https://i.pinimg.com/736x/8e/a0/2d/8ea02d032fc7bc6855db955ee4a2a665.jpg",
     "avatarPlaceholder": "JV",
     "actionIcon": LucideIcons.plus,
     "onPressed": () {}
