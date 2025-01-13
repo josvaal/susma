@@ -11,6 +11,8 @@ Future<UserCredential> authRegister(Map<Object, dynamic> data) async {
         name: data["name"],
         lastname: data["lastname"],
         username: data["username"],
+        avatarUrl:
+            "https://res.cloudinary.com/dahazkbrf/image/upload/v1736745266/susma/pfps/default.jpg",
       ),
     );
 
