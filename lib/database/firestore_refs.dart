@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:susma/database/firebase_instances.dart';
-import 'package:susma/main/auth/models/user_metadata.dart';
+import 'package:susma/main/auth/models/account_metadata.dart';
 
 final accountMetadataRef =
     firestore.collection('account_metadata').withConverter<AccountMetadata>(

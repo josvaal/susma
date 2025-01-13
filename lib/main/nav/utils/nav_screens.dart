@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
-import 'package:susma/main/home/screens/HomeScreen.dart';
+import 'package:susma/main/home/screens/home_screen.dart';
 import 'package:susma/main/reports/screens/ReportsScreen.dart';
 import 'package:susma/main/settings/screens/SettingsScreen.dart';
 

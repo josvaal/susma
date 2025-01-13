@@ -3,12 +3,12 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:susma/database/firestore_refs.dart';
 import 'package:susma/globals/globals.dart' as globals;
-import 'package:susma/main/auth/models/user_metadata.dart';
+import 'package:susma/main/auth/models/account_metadata.dart';
 import 'package:susma/main/error/screens/ErrorScreen.dart';
 import 'package:susma/main/nav/components/FloatingBottomBar.dart';
 import 'package:susma/main/nav/methods/string_methods.dart';
-import 'package:susma/main/nav/pages/NavigationPage.dart';
-import 'package:susma/main/nav/components/CustomAppBar.dart';
+import 'package:susma/main/nav/pages/navigation_page.dart';
+import 'package:susma/main/nav/components/custom_app_bar.dart';
 import 'package:susma/main/nav/utils/nav_screens.dart';
 import 'package:susma/main/start/screens/start_screen.dart';
 

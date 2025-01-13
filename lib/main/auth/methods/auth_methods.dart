@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:susma/database/firebase_instances.dart';
-import 'package:susma/main/auth/models/user_metadata.dart';
+import 'package:susma/main/auth/models/account_metadata.dart';
 import 'package:susma/database/firestore_refs.dart';
 
 Future<UserCredential> authRegister(Map<Object, dynamic> data) async {
@@ -59,4 +59,8 @@ Future<UserCredential> authLogin(Map<Object, dynamic> data) async {
     throw Exception('Error desconocido: $e');
   }
   throw Exception('Registro fallido por razones desconocidas.');
+}
+
+Future<void> accountSignOut() async {
+  await auth.signOut();
 }

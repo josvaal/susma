@@ -66,7 +66,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
                 Text(
                   subtitle!,
-                  style: ShadTheme.of(context).textTheme.small?.copyWith(
+                  style: ShadTheme.of(context).textTheme.small.copyWith(
                         color: ShadTheme.of(context)
                             .textTheme
                             .small
