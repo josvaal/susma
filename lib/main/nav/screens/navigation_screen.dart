@@ -67,6 +67,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
   PreferredSizeWidget? _getAppBar(BuildContext context) {
     appBarData[0]["title"] = accountMetadata.name;
     appBarData[0]["subtitle"] = accountMetadata.username;
+    appBarData[0]["leadingType"] = "avatar";
     appBarData[0]["avatarUrl"] = accountMetadata.avatarUrl;
     appBarData[0]["avatarPlaceholder"] = getInitials(accountMetadata.name);
 
