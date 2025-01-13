@@ -12,11 +12,10 @@ final List<Widget> screens = [
 
 final List<Map<String, dynamic>> appBarData = [
   {
-    "title": "José Valentino",
-    "leadingType": 'avatar',
-    "avatarUrl":
-        "https://i.pinimg.com/736x/8e/a0/2d/8ea02d032fc7bc6855db955ee4a2a665.jpg",
-    "avatarPlaceholder": "JV",
+    "title": "",
+    "leadingType": '',
+    "avatarUrl": "",
+    "avatarPlaceholder": "",
     "actionIcon": LucideIcons.plus,
     "onPressed": () {}
   },

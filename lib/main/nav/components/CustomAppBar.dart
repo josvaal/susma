@@ -8,6 +8,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? avatarPlaceholder;
   final IconData? icon;
   final String title;
+  final String? subtitle;
   final IconData? actionIcon;
   final void Function()? onPressed;
 
@@ -18,6 +19,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.avatarPlaceholder,
     this.icon,
     required this.title,
+    this.subtitle,
     this.actionIcon,
     this.onPressed,
   });
@@ -50,13 +52,34 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       leading: Padding(
-        padding: const EdgeInsets.only(left: 16.0),
+        padding: const EdgeInsets.only(left: 16.0, top: 8),
         child: _buildLeading(),
       ),
-      title: Text(
-        title,
-        style: ShadTheme.of(context).textTheme.h4,
-      ),
+      title: subtitle != null
+          ? Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: ShadTheme.of(context).textTheme.h4,
+                ),
+                Text(
+                  subtitle!,
+                  style: ShadTheme.of(context).textTheme.small?.copyWith(
+                        color: ShadTheme.of(context)
+                            .textTheme
+                            .small
+                            .color
+                            ?.withValues(alpha: 0.5),
+                      ),
+                )
+              ],
+            )
+          : Text(
+              title,
+              style: ShadTheme.of(context).textTheme.h4,
+            ),
       actions: actionIcon != null
           ? [
               Padding(
