@@ -1,9 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
+import 'package:susma/globals/globals.dart' as globals;
 import 'package:susma/routes/route_config.dart';
 import 'package:susma/main/auth/screens/AuthScreen.dart';
-import 'package:susma/main/start/screens/StartScreen.dart';
+import 'package:susma/main/start/screens/start_screen.dart';
 
 class AuthStateScreen extends StatefulWidget {
   final AppRouter appRouter;
@@ -23,6 +24,7 @@ class _AuthStateScreenState extends State<AuthStateScreen> {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return StartScreen();
           } else if (snapshot.hasData && snapshot.data != null) {
+            globals.accountUID = snapshot.data!.uid;
             return ShadApp.router(
               darkTheme: ShadThemeData(
                 brightness: Brightness.dark,

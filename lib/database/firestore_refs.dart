@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:susma/database/firebase_instances.dart';
 import 'package:susma/main/auth/models/user_metadata.dart';
 
@@ -7,3 +8,12 @@ final accountMetadataRef =
               AccountMetadata.fromJson(snapshot.data()!),
           toFirestore: (accountMetadata, _) => accountMetadata.toJson(),
         );
+
+Stream<QuerySnapshot<Object?>> getAccountMetadataRefByUID(String uid) {
+  Stream<QuerySnapshot<Map<String, dynamic>>> documentStream = FirebaseFirestore
+      .instance
+      .collection('account_metadata')
+      .where('uid', isEqualTo: uid)
+      .snapshots();
+  return documentStream;
+}

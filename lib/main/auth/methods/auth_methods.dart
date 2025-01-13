@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:susma/database/firebase_instances.dart';
 import 'package:susma/main/auth/models/user_metadata.dart';
-import 'package:susma/main/auth/utils/firebase_refs.dart';
+import 'package:susma/database/firestore_refs.dart';
 
 Future<UserCredential> authRegister(Map<Object, dynamic> data) async {
   try {
