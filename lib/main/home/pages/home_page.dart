@@ -1,7 +1,4 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:line_icons/line_icons.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:susma/main/auth/methods/auth_methods.dart';
 import 'package:susma/main/home/components/horizontal_list.dart';
