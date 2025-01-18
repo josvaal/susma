@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:susma/main/home/components/card_preview_subscriptions.dart';
 import 'package:susma/main/home/models/preview_subscription.dart';
 
 class HorizontalList extends StatelessWidget {
@@ -12,37 +12,8 @@ class HorizontalList extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       itemCount: items.length,
       itemBuilder: (context, index) {
-        final item = items[index];
-        return Container(
-          width: 100,
-          margin: EdgeInsets.symmetric(horizontal: 8.0),
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Theme.of(context)
-                  .colorScheme
-                  .onSurface
-                  .withValues(alpha: 0.1),
-              width: 1.0,
-            ),
-            color: Colors.transparent,
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SvgPicture.asset(
-                item.icon,
-                colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
-              ),
-              SizedBox(height: 8),
-              Text(
-                item.title,
-                style: TextStyle(color: Colors.white, fontSize: 16),
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
-        );
+        final PreviewSubscription item = items[index];
+        return CardPreviewSubscriptions(item: item);
       },
     );
   }

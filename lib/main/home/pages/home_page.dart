@@ -16,21 +16,21 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List<PreviewSubscription> items = [
     PreviewSubscription(
-      title: 'Notion',
+      title: 'Notion Team',
       icon: "assets/notion.svg",
       currency: 'USD',
       ammount: '10.99',
       daysLeft: 30,
     ),
     PreviewSubscription(
-      title: 'Netflix',
+      title: 'Netflix Premium',
       icon: "assets/netflix.svg",
       currency: 'USD',
       ammount: '5.99',
       daysLeft: 15,
     ),
     PreviewSubscription(
-      title: 'Spotify',
+      title: 'Spotify Premium',
       icon: "assets/spotify.svg",
       currency: 'EUR',
       ammount: '12.50',
@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
             height: 10.0,
           ),
           SizedBox(
-            height: 150.0,
+            height: 94.0,
             child: HorizontalList(items: items),
           ),
           SizedBox(
@@ -95,7 +95,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           SizedBox(
-            height: 200.0,
+            height: 250.0,
           ),
           LayoutBetween(
             left: Text(
