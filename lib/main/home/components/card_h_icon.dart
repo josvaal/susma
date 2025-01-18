@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class CardPreviewIcon extends StatelessWidget {
+class CardHIcon extends StatelessWidget {
   final String path;
-  const CardPreviewIcon({super.key, required this.path});
+  const CardHIcon({super.key, required this.path});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class CardPreviewIcon extends StatelessWidget {
       padding: EdgeInsets.all(10.0),
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.onSurface.withValues(
-              alpha: 0.1,
+              alpha: 0.08,
             ),
         borderRadius: BorderRadius.circular(10),
       ),

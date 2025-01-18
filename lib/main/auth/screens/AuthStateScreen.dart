@@ -4,7 +4,7 @@ import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:susma/globals/globals.dart' as globals;
 import 'package:susma/routes/route_config.dart';
 import 'package:susma/main/auth/screens/AuthScreen.dart';
-import 'package:susma/main/start/screens/start_screen.dart';
+import 'package:susma/main/loading/screens/loading_screen.dart';
 
 class AuthStateScreen extends StatefulWidget {
   final AppRouter appRouter;

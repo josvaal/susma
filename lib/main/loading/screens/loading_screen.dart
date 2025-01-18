@@ -20,7 +20,7 @@ class _StartScreenState extends State<StartScreen> {
           mainAxisSize: MainAxisSize.min,
           children: [
             LoadingAnimationWidget.halfTriangleDot(
-              color: Colors.white,
+              color: Theme.of(context).colorScheme.onSurface,
               size: 50,
             ),
             SizedBox(height: 10.0),

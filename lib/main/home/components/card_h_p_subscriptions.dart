@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
-import 'package:susma/main/home/components/card_preview_icon.dart';
+import 'package:susma/main/home/components/card_h_icon.dart';
 import 'package:susma/main/home/components/layout_between.dart';
 import 'package:susma/main/home/models/preview_subscription.dart';
 
-class CardPreviewSubscriptions extends StatelessWidget {
+class CardHPSubscriptions extends StatelessWidget {
   final PreviewSubscription item;
-  const CardPreviewSubscriptions({super.key, required this.item});
+  const CardHPSubscriptions({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 8.0),
       padding: EdgeInsets.all(12.0),
       decoration: BoxDecoration(
         border: Border.all(
@@ -29,7 +27,7 @@ class CardPreviewSubscriptions extends StatelessWidget {
         children: [
           LayoutBetween(
             spacing: 10.0,
-            left: CardPreviewIcon(path: item.icon),
+            left: CardHIcon(path: item.icon),
             right: Column(
               spacing: 5.0,
               mainAxisAlignment: MainAxisAlignment.start,

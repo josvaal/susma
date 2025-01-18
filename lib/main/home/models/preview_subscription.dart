@@ -4,6 +4,8 @@ class PreviewSubscription {
   final String currency;
   final String ammount;
   final int daysLeft;
+  final DateTime renewalDate;
+  final String renewalFrequency;
 
   PreviewSubscription({
     required this.title,
@@ -11,5 +13,7 @@ class PreviewSubscription {
     required this.currency,
     required this.ammount,
     required this.daysLeft,
+    required this.renewalDate,
+    required this.renewalFrequency,
   });
 }

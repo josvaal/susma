@@ -10,7 +10,7 @@ import 'package:susma/main/nav/methods/string_methods.dart';
 import 'package:susma/main/nav/pages/navigation_page.dart';
 import 'package:susma/main/nav/components/custom_app_bar.dart';
 import 'package:susma/main/nav/utils/nav_screens.dart';
-import 'package:susma/main/start/screens/start_screen.dart';
+import 'package:susma/main/loading/screens/loading_screen.dart';
 
 @RoutePage()
 class NavigationScreen extends StatefulWidget {
