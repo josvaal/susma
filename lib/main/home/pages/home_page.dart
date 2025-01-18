@@ -54,45 +54,63 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        LayoutBetween(
-          left: Text(
-            'Siguientes',
-            style: ShadTheme.of(context).textTheme.large,
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          LayoutBetween(
+            left: Text(
+              'Siguientes',
+              style: ShadTheme.of(context).textTheme.large,
+            ),
+            right: RoundedButton(
+              text: "Ver Todo",
+              onPressed: () async {
+                await accountSignOut();
+              },
+            ),
           ),
-          right: RoundedButton(
-            text: "Ver Todo",
-            onPressed: () async {
-              await accountSignOut();
-            },
+          SizedBox(
+            height: 10.0,
           ),
-        ),
-        SizedBox(
-          height: 10.0,
-        ),
-        SizedBox(
-          height: 150.0,
-          child: HorizontalList(items: items),
-        ),
-        SizedBox(
-          height: 10.0,
-        ),
-        LayoutBetween(
-          left: Text(
-            'Todos',
-            style: ShadTheme.of(context).textTheme.large,
+          SizedBox(
+            height: 150.0,
+            child: HorizontalList(items: items),
           ),
-          right: RoundedButton(
-            text: "Ver Todo",
-            onPressed: () async {
-              await accountSignOut();
-            },
+          SizedBox(
+            height: 10.0,
           ),
-        ),
-      ],
+          LayoutBetween(
+            left: Text(
+              'Todos',
+              style: ShadTheme.of(context).textTheme.large,
+            ),
+            right: RoundedButton(
+              text: "Ver Todo",
+              onPressed: () async {
+                await accountSignOut();
+              },
+            ),
+          ),
+          SizedBox(
+            height: 200.0,
+          ),
+          LayoutBetween(
+            left: Text(
+              'Todos',
+              style: ShadTheme.of(context).textTheme.large,
+            ),
+            right: RoundedButton(
+              text: "Ver Todo",
+              onPressed: () async {
+                await accountSignOut();
+              },
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

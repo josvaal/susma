@@ -32,8 +32,9 @@ class _FloatingBottomBarState extends State<FloatingBottomBar> {
           filter: ImageFilter.blur(sigmaX: 15.0, sigmaY: 15.0),
           child: Container(
             decoration: BoxDecoration(
-              color:
-                  Theme.of(context).colorScheme.surface.withValues(alpha: 0.5),
+              color: Theme.of(context).colorScheme.surface.withValues(
+                    alpha: 0.5,
+                  ),
             ),
             child: NavigationBar(
               onDestinationSelected: widget.destinationSelected,

@@ -5,7 +5,7 @@ import 'package:susma/database/firestore_refs.dart';
 import 'package:susma/globals/globals.dart' as globals;
 import 'package:susma/main/auth/models/account_metadata.dart';
 import 'package:susma/main/error/screens/ErrorScreen.dart';
-import 'package:susma/main/nav/components/FloatingBottomBar.dart';
+import 'package:susma/main/nav/components/floating_bottom_bar.dart';
 import 'package:susma/main/nav/methods/string_methods.dart';
 import 'package:susma/main/nav/pages/navigation_page.dart';
 import 'package:susma/main/nav/components/custom_app_bar.dart';
