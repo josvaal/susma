@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:susma/main/home/components/card_h_icon.dart';
 import 'package:susma/main/home/components/layout_between.dart';
-import 'package:susma/main/home/models/preview_subscription.dart';
+import 'package:susma/main/home/models/model_subscription.dart';
 
 class CardHPSubscriptions extends StatelessWidget {
-  final PreviewSubscription item;
+  final ModelSubscription item;
   const CardHPSubscriptions({super.key, required this.item});
 
   @override
@@ -41,7 +41,7 @@ class CardHPSubscriptions extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 Text(
-                  "Quedan ${item.daysLeft} días",
+                  "Quedan ${item.renewalDate.difference(DateTime.now()).inDays} días",
                   style: ShadTheme.of(context).textTheme.small.copyWith(
                         color:
                             Theme.of(context).colorScheme.onSurface.withValues(

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 import 'package:susma/main/home/components/card_v_icon.dart';
 import 'package:susma/main/home/components/layout_between.dart';
-import 'package:susma/main/home/models/preview_subscription.dart';
+import 'package:susma/main/home/models/model_subscription.dart';
 
 class CardVPSubscription extends StatelessWidget {
-  final PreviewSubscription item;
+  final ModelSubscription item;
   const CardVPSubscription({super.key, required this.item});
 
   @override

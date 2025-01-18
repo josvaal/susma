@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:susma/main/home/components/card_h_p_subscriptions.dart';
-import 'package:susma/main/home/models/preview_subscription.dart';
+import 'package:susma/main/home/models/model_subscription.dart';
 
 class RowPSubscriptions extends StatelessWidget {
-  final List<PreviewSubscription> items;
+  final List<ModelSubscription> items;
   const RowPSubscriptions({super.key, required this.items});
 
   @override
@@ -16,7 +16,7 @@ class RowPSubscriptions extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       itemCount: items.length,
       itemBuilder: (context, index) {
-        final PreviewSubscription item = items[index];
+        final ModelSubscription item = items[index];
         return CardHPSubscriptions(item: item);
       },
     );

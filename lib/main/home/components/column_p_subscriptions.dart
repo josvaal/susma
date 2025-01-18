@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:susma/main/home/components/card_v_p_subscription.dart';
-import 'package:susma/main/home/models/preview_subscription.dart';
+import 'package:susma/main/home/models/model_subscription.dart';
 
 class ColumnPSubscriptions extends StatelessWidget {
-  final List<PreviewSubscription> items;
+  final List<ModelSubscription> items;
   const ColumnPSubscriptions({super.key, required this.items});
 
   @override
@@ -17,7 +17,7 @@ class ColumnPSubscriptions extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         itemCount: items.length,
         itemBuilder: (context, index) {
-          final PreviewSubscription item = items[index];
+          final ModelSubscription item = items[index];
           return CardVPSubscription(item: item);
         },
       ),

@@ -17,3 +17,14 @@ Stream<QuerySnapshot<Object?>> getAccountMetadataRefByUID(String uid) {
       .snapshots();
   return documentStream;
 }
+
+Stream<QuerySnapshot<Object?>> getSubscriptionRefByUID(String uid) {
+  Stream<QuerySnapshot<Map<String, dynamic>>> documentStream = FirebaseFirestore
+      .instance
+      .collection('subscriptions')
+      .orderBy("renewalDate", descending: true)
+      .where("account_uid", isEqualTo: uid)
+      .limit(5)
+      .snapshots();
+  return documentStream;
+}

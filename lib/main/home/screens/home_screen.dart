@@ -13,9 +13,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
-      child: Center(
-        child: HomePage(),
-      ),
+      child: HomePage(),
     );
   }
 }
