@@ -1,8 +1,6 @@
-import 'package:flutter_svg/svg.dart';
-
 class PreviewSubscription {
   final String title;
-  final SvgPicture icon;
+  final String icon;
   final String currency;
   final String ammount;
   final int daysLeft;

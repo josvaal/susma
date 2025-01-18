@@ -17,50 +17,35 @@ class _HomePageState extends State<HomePage> {
   final List<PreviewSubscription> items = [
     PreviewSubscription(
       title: 'Notion',
-      icon: SvgPicture.asset(
-        "assets/notion.svg",
-        colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
-      ),
+      icon: "assets/notion.svg",
       currency: 'USD',
       ammount: '10.99',
       daysLeft: 30,
     ),
     PreviewSubscription(
       title: 'Netflix',
-      icon: SvgPicture.asset(
-        "assets/netflix.svg",
-        colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
-      ),
+      icon: "assets/netflix.svg",
       currency: 'USD',
       ammount: '5.99',
       daysLeft: 15,
     ),
     PreviewSubscription(
       title: 'Spotify',
-      icon: SvgPicture.asset(
-        "assets/spotify.svg",
-        colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
-      ),
+      icon: "assets/spotify.svg",
       currency: 'EUR',
       ammount: '12.50',
       daysLeft: 10,
     ),
     PreviewSubscription(
       title: 'Apple Music',
-      icon: SvgPicture.asset(
-        "assets/apple-music.svg",
-        colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
-      ),
+      icon: "assets/apple-music.svg",
       currency: 'USD',
       ammount: '8.49',
       daysLeft: 20,
     ),
     PreviewSubscription(
       title: 'Google Drive',
-      icon: SvgPicture.asset(
-        "assets/google-drive.svg",
-        colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
-      ),
+      icon: "assets/google-drive.svg",
       currency: 'GBP',
       ammount: '6.99',
       daysLeft: 25,

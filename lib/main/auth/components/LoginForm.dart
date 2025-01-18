@@ -116,8 +116,23 @@ class _LoginFormState extends State<LoginForm> {
             ),
           ),
           ShadButton.link(
+            height: 45.0,
             onPressed: widget.togglePage,
-            child: const Text('¿Aún no tienes cuenta? Regístrate'),
+            child: RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                text: '¿Aún no tienes cuenta?\n',
+                style: ShadTheme.of(context).textTheme.small,
+                children: <TextSpan>[
+                  TextSpan(
+                    text: "Registrarme",
+                    style: ShadTheme.of(context).textTheme.small.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                  )
+                ],
+              ),
+            ),
           ),
         ],
       ),

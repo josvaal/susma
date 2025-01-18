@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:susma/main/home/models/preview_subscription.dart';
 
 class HorizontalList extends StatelessWidget {
@@ -29,7 +30,10 @@ class HorizontalList extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              item.icon,
+              SvgPicture.asset(
+                item.icon,
+                colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
+              ),
               SizedBox(height: 8),
               Text(
                 item.title,

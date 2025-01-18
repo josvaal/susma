@@ -148,8 +148,23 @@ class _RegisterFormState extends State<RegisterForm> {
               ),
             ),
             ShadButton.link(
+              height: 45,
               onPressed: widget.togglePage,
-              child: const Text('¿Ya tienes una cuenta? Iniciar Sesión'),
+              child: RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(
+                  text: '¿Ya tienes una cuenta?\n',
+                  style: ShadTheme.of(context).textTheme.small,
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: "Iniciar Sesión",
+                      style: ShadTheme.of(context).textTheme.small.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                    )
+                  ],
+                ),
+              ),
             ),
           ],
         ),
