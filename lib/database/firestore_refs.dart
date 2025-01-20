@@ -23,7 +23,7 @@ Stream<QuerySnapshot<Object?>> getSubscriptionRefByUID(String uid) {
       .instance
       .collection('subscriptions')
       .orderBy("renewalDate", descending: true)
-      .where("account_uid", isEqualTo: uid)
+      .where("accountUID", isEqualTo: uid)
       .limit(5)
       .snapshots();
   return documentStream;

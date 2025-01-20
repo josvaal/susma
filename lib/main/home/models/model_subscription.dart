@@ -23,7 +23,7 @@ class ModelSubscription {
           icon: json['icon']! as String,
           currency: json['currency']! as String,
           ammount: json['ammount']! as String,
-          renewalDate: json['renewalDate']! as DateTime,
+          renewalDate: DateTime.parse(json["renewalDate"] as String),
           renewalFrequency: json['renewalFrequency']! as String,
           accountUID: json['accountUID']! as String,
         );

@@ -46,8 +46,6 @@ class _NavigationScreenState extends State<NavigationScreen> {
                 document.data() as Map<String, Object?>,
               );
             });
-
-            print('AccountMetadata: ${accountMetadata.toJson()}');
           }
         } else {
           setState(() {
