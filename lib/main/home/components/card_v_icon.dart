@@ -18,7 +18,7 @@ class CardVIcon extends StatelessWidget {
       child: SvgPicture.asset(
         width: 32,
         height: 32,
-        path,
+        "assets/$path.svg",
         colorFilter: ColorFilter.mode(
           Theme.of(context).colorScheme.onSurface,
           BlendMode.srcIn,

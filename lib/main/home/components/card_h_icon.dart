@@ -16,7 +16,7 @@ class CardHIcon extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       child: SvgPicture.asset(
-        path,
+        "assets/$path.svg",
         colorFilter: ColorFilter.mode(
           Theme.of(context).colorScheme.onSurface,
           BlendMode.srcIn,

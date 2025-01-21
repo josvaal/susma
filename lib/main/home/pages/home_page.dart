@@ -6,6 +6,7 @@ import 'package:susma/database/firestore_refs.dart';
 import 'package:susma/globals/globals.dart' as globals;
 import 'package:susma/main/auth/methods/auth_methods.dart';
 import 'package:susma/main/home/components/column_p_subscriptions.dart';
+import 'package:susma/main/home/components/dialog_new_subscription.dart';
 import 'package:susma/main/home/components/row_p_subscriptions.dart';
 import 'package:susma/main/home/components/layout_between.dart';
 import 'package:susma/main/home/components/rounded_button.dart';
@@ -33,29 +34,29 @@ class _HomePageState extends State<HomePage> {
   void _fetchPreviewSubscriptions() {
     _subscription =
         getSubscriptionRefByUID(globals.accountUID).listen((snapshot) {
-      if (!mounted) return;
-      if (snapshot.docs.isNotEmpty) {
-        setState(() {
-          isLoading = false;
-          hasError = false;
-          items = snapshot.docs.map((document) {
-            return ModelSubscription.fromJson(
-              document.data() as Map<String, Object?>,
-            );
-          }).toList();
+          if (!mounted) return;
+          if (snapshot.docs.isNotEmpty) {
+            setState(() {
+              isLoading = false;
+              hasError = false;
+              items = snapshot.docs.map((document) {
+                return ModelSubscription.fromJson(
+                  document.data() as Map<String, Object?>,
+                );
+              }).toList();
+            });
+          } else {
+            setState(() {
+              hasError = true;
+            });
+          }
+        }, onError: (_) {
+          if (!mounted) return;
+          setState(() {
+            isLoading = false;
+            hasError = true;
+          });
         });
-      } else {
-        setState(() {
-          hasError = true;
-        });
-      }
-    }, onError: (_) {
-      if (!mounted) return;
-      setState(() {
-        isLoading = false;
-        hasError = true;
-      });
-    });
   }
 
   @override
@@ -77,13 +78,19 @@ class _HomePageState extends State<HomePage> {
             height: 80,
             "assets/dev/face_sad.svg",
             colorFilter: ColorFilter.mode(
-              Theme.of(context).colorScheme.onSurface,
+              Theme
+                  .of(context)
+                  .colorScheme
+                  .onSurface,
               BlendMode.srcIn,
             ),
           ),
           Text(
             "Aún no añadiste ninguna subscripción",
-            style: ShadTheme.of(context).textTheme.large,
+            style: ShadTheme
+                .of(context)
+                .textTheme
+                .large,
             textAlign: TextAlign.center,
           )
         ],
@@ -100,12 +107,18 @@ class _HomePageState extends State<HomePage> {
           LayoutBetween(
             left: Text(
               'Siguientes',
-              style: ShadTheme.of(context).textTheme.large,
+              style: ShadTheme
+                  .of(context)
+                  .textTheme
+                  .large,
             ),
             right: RoundedButton(
               text: "Ver Todo",
               onPressed: () async {
-                await accountSignOut();
+                showShadDialog(
+                    context: context,
+                    builder: (context) => DialogNewSubscription(),
+                );
               },
             ),
           ),
@@ -122,7 +135,10 @@ class _HomePageState extends State<HomePage> {
           LayoutBetween(
             left: Text(
               'Todos',
-              style: ShadTheme.of(context).textTheme.large,
+              style: ShadTheme
+                  .of(context)
+                  .textTheme
+                  .large,
             ),
             right: RoundedButton(
               text: "Ver Todo",
